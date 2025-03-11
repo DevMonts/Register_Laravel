@@ -8,4 +8,6 @@ Route::get('/', function () {
 })->name('login');
 Route::get('/registro', [RegistrarUsuarioController::class, 'showForm']);
 Route::post('/registro', [RegistrarUsuarioController::class, 'registro']);
+
 Route::view('/painel', 'dashboard')->middleware('auth')->name('painel');
+Route::view('/client_painel', 'client_list')->middleware('auth')->name('client_painel');
