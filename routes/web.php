@@ -1,14 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisteredUserController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\RegistrarUsuarioController;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/user', [UserController::class, 'index']);
-
-Route::get('/register', [RegisteredUserController::class, 'showForm']);
-Route::post('/register', [RegisteredUserController::class, 'register']);
+    return view('login');
+})->name('login');
+Route::get('/registro', [RegistrarUsuarioController::class, 'showForm']);
+Route::post('/registro', [RegistrarUsuarioController::class, 'registro']);
+Route::view('/painel', 'dashboard')->middleware('auth')->name('painel');
