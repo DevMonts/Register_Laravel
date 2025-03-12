@@ -13,20 +13,14 @@ class LogarUsuarioController extends Controller
     {
         return view('client_list');
     }
-    public function login(Request $request) {
-        $validator = Validator::make($request->all(), [
+    public function login(Request $request)
+    {
+        $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8',
         ]);
-        if ($validator->fails()) {
-            return redirect()->route('login')
-            ->withErrors($validator)
-            ->withInput();
-        }
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('client_list');
-        } else {
-            return redirect()->route('login')->withErrors(['email' => 'Credenciais incorretas.']);
-        }
+        return Auth::attempt($credentials)
+            ? redirect()->route('client_list')
+            : back()->withErrors(['email' => 'Credenciais incorretas.'])->withInput();
     }
 }
