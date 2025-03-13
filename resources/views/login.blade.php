@@ -17,7 +17,7 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="/client_painel" method="POST">
+            <form class="space-y-6" action="/home" method="POST">
                 @csrf
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-gray-900">

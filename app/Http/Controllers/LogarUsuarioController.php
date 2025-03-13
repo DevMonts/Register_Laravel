@@ -11,7 +11,7 @@ class LogarUsuarioController extends Controller
 {
     public function showLoginForm()
     {
-        return view('client_list');
+        return view('home');
     }
     public function login(Request $request)
     {
@@ -20,7 +20,7 @@ class LogarUsuarioController extends Controller
             'password' => 'required|min:8',
         ]);
         return Auth::attempt($credentials)
-            ? redirect()->route('client_list')
+            ? redirect()->route('home')
             : back()->withErrors(['email' => 'Credenciais incorretas.'])->withInput();
     }
 }
