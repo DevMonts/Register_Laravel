@@ -1,6 +1,8 @@
 @extends('master')
 @section('content')
-    <!DOCTYPE html>
+   <h1>Home</h1>
+@endsection
+ {{-- <!DOCTYPE html>
     <html lang="pt-br">
 
     <head>
@@ -1216,5 +1218,4 @@
         </div>
     </body>
 
-    </html>
-@endsection
+    </html> --}}

@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
 class ClienteController
 {
+    public readonly User $client;
+    public function __construct()
+    {
+        $this->client = new User();
+    }
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index() {
+        $client = $this->client->all();
+        return view('clientes', ['clients' => $client]);
     }
 
     /**
