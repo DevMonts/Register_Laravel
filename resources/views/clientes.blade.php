@@ -4,6 +4,7 @@
     <ul>
         @foreach ($clients as $client)
             <li>{{ $client->firstName }}</li>
+            <li>{{ $client->lastName }}</li>
         @endforeach
     </ul>
 @endsection
