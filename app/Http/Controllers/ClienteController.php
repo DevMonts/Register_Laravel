@@ -26,7 +26,7 @@ class ClienteController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
@@ -34,7 +34,12 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+        ]);
+        Client::create($request->all());
+        return redirect()->route('clients.index')->with('success','Cliente Cadastrado');
     }
 
     /**
