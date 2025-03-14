@@ -19,8 +19,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/clients', [ClienteController::class, 'index'])->name('clients.index');
 Route::get('/clients/create', [ClienteController::class, 'create'])->name('clients.create');
-Route::get('/clients', [ClienteController::class, 'store'])->name('clients.store');
-Route::get('/clients/{client}', [ClienteController::class, 'show'])->name('clients.show');
-Route::get('/clients/{client}/edit', [ClienteController::class, 'edit'])->name('clients.edit');
-Route::get('/clients/{client}', [ClienteController::class, 'update'])->name('clients.update');
-Route::get('/clients/{client}', [ClienteController::class, 'destroy'])->name('clients.destroy');
+Route::post('/clients', [ClienteController::class, 'store'])->name('clients.store');
+Route::post('/clients/{client}', [ClienteController::class, 'show'])->name('clients.show');
+Route::post('/clients/{client}/edit', [ClienteController::class, 'edit'])->name('clients.edit');
+Route::put('/clients/{client}', [ClienteController::class, 'update'])->name('clients.update');
+Route::delete('/clients/{client}', [ClienteController::class, 'destroy'])->name('clients.destroy');

@@ -2,23 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use GuzzleHttp\Client;
+use App\Models\Client;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
-class ClienteController
+class ClienteController extends Controller
 {
-    public readonly User $client;
+    public readonly Client $client;
     public function __construct()
     {
-        $this->client = new User();
+        $this->client = new Client();
     }
     /**
      * Display a listing of the resource.
      */
     public function index() {
-        $client = $this->client->all();
-        return view('clientes', ['clients' => $client]);
+        $clients = Client::all();
+        return view('clientes', compact('clients'));    
     }
 
     /**
