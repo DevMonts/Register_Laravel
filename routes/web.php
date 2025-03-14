@@ -15,7 +15,7 @@ Route::post('/registro', [RegistrarUsuarioController::class, 'registro']);
 
 Route::post('/home', [LogarUsuarioController::class, 'login']);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home', [ClienteController::class, 'index'])->name('home');
 
 Route::get('/clients', [ClienteController::class, 'index'])->name('clients.index');
 Route::post('/clients/create', [ClienteController::class, 'create'])->name('clients.create');
