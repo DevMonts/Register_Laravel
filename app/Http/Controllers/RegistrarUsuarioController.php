@@ -36,6 +36,6 @@ class RegistrarUsuarioController
 
         Auth::login($user);
 
-        return redirect()->route('painel');
+        return redirect()->route('home');
     }
 }
