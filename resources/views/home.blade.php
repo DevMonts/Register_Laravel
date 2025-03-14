@@ -30,10 +30,6 @@
         <br>
         <button type="submit">Cadastrar</button>
     </form>
-
-    @if (session('success'))
-        <p style="color: green;">{{ session('success') }}</p>
-    @endif
     @if ($clients->isNotEmpty())
         <table>
             <tr>
@@ -78,6 +74,10 @@
         </table>
     @else
         <p>Nenhum Cliente</p>
+    @endif
+
+    @if (session('success'))
+        <p style="color: green;">{{ session('success') }}</p>
     @endif
 </body>
 
