@@ -18,7 +18,7 @@ Route::post('/home', [LogarUsuarioController::class, 'login']);
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/clients', [ClienteController::class, 'index'])->name('clients.index');
-Route::get('/clients/create', [ClienteController::class, 'create'])->name('clients.create');
+Route::post('/clients/create', [ClienteController::class, 'create'])->name('clients.create');
 Route::post('/clients', [ClienteController::class, 'store'])->name('clients.store');
 Route::post('/clients/{client}', [ClienteController::class, 'show'])->name('clients.show');
 Route::post('/clients/{client}/edit', [ClienteController::class, 'edit'])->name('clients.edit');

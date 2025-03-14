@@ -1,7 +1,40 @@
-@extends('master')
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+
+<body>
+    @if (isset($clients) && $clients->count() > 0)
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+            </tr>
+            @foreach ($clients as $client)
+                <tr>
+                    <td>{{ $client->id }}</td>
+                    <td>{{ $client->first_name }}</td>
+                    <td>{{ $client->last_name }}</td>
+                </tr>
+            @endforeach
+        </table>
+    @else
+        <p>Nenhum Cliente</p>
+    @endif
+</body>
+
+</html>
+
+{{-- @extends('master')
 @section('content')
    <h1>Home</h1>
-@endsection
+@endsection --}}
+
  {{-- <!DOCTYPE html>
     <html lang="pt-br">
 
