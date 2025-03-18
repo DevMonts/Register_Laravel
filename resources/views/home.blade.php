@@ -22,7 +22,7 @@
 
 <body class="h-full bg-gray-900 text-white">
     <div class="flex justify-between items-center p-4 bg-gray-800">
-        <h2 class="text-2xl font-bold text-white">Olá, {{ Auth::user()->name ?? 'Visitante' }}! 👋</h2>
+        <h2 class="text-2xl font-bold text-white">Olá, {{ Auth::user()->name ?? 'visitante' }}! 👋</h2>
         <form action="{{ route('logout') }}" method="POST">
             @csrf
             <button type="submit" class="bg-red-600 px-4 py-2 rounded text-white hover:bg-red-500">
