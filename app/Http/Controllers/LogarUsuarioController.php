@@ -26,4 +26,11 @@ class LogarUsuarioController extends Controller
             ? redirect()->route('home')
             : back()->withErrors(['email' => 'Credenciais incorretas.'])->withInput();
     }
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }

@@ -17,3 +17,5 @@ Route::post('/home', [LogarUsuarioController::class, 'login']);
 Route::get('/home', [ClienteController::class, 'index'])->name('home');
 
 Route::resource('clients', ClienteController::class);
+
+Route::post('/logout', [LogarUsuarioController::class, 'logout'])->name('logout');
