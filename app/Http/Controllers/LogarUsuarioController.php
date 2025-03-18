@@ -10,6 +10,12 @@ class LogarUsuarioController extends Controller
 {
     public function login(Request $request)
     {
+        $messages = [
+            'email.required' => 'Digite seu email.',
+            'email.email' => 'Email inválido.',
+            'password.required' => 'Digite sua senha.',
+            'password.min' => 'A senha tem que ter pelo menos 8 digitos.'
+        ];
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required|min:8',
