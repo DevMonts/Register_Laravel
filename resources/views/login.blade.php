@@ -17,9 +17,6 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            @if ($mensage = Session::get('error'))
-                {{ $message }}
-            @endif
             <form class="space-y-6" action="/home" method="POST">
                 @csrf
                 <div>
@@ -42,6 +39,16 @@
                         <input type="password" name="password" id="password" autocomplete="current-password" required
                             class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6">
                     </div>
+                </div>
+                <div>
+                    @if ($mensage = Session::get('error'))
+                        {{ $message }}
+                    @endif
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                            {{ $error }}
+                        @endforeach
+                    @endif
                 </div>
                 <div>
                     <button type="submit"
