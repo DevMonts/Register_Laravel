@@ -17,6 +17,6 @@ class LogarUsuarioController extends Controller
         ]);
         return Auth::attempt($credentials)
             ? redirect()->route('home')
-            : back()->withErrors(['email' => 'Credenciais incorretas.'])->withInput();
+            : back()->withErrors(['email' => 'Credenciais Incorretas'])->withInput();
     }
 }
