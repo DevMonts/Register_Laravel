@@ -9,10 +9,6 @@ use Illuminate\Support\Facades\Validator;
 
 class LogarUsuarioController extends Controller
 {
-    public function showLoginForm()
-    {
-        return view('home');
-    }
     public function login(Request $request)
     {
         $credentials = $request->validate([
