@@ -29,7 +29,7 @@
                     </div>
                 </div>
                 @if ($errors->has('email'))
-                    <div class="text-danger">
+                    <div class="text-red-500">
                         {{ $errors->first('email') }}
                     </div>
                 @endif
@@ -46,11 +46,11 @@
                     </div>
                 </div>
                 @if ($errors->has('password'))
-                    <div class="text-danger">
+                    <div class="text-red-500">
                         {{ $errors->first('password') }}
                     </div>
                 @endif
-                <div>
+                <div class="text-red-500">
                     @if ($errors->any())
                         @foreach ($errors->all() as $error)
                             {{ $error }}
