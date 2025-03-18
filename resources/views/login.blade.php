@@ -17,6 +17,9 @@
             </h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            @if ($mensage = Session::get('error'))
+                {{ $message }}
+            @endif
             <form class="space-y-6" action="/home" method="POST">
                 @csrf
                 <div>
