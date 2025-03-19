@@ -22,7 +22,7 @@ class LogarUsuarioController extends Controller
                 'password.min' => 'A senha tem que ter pelo menos 8 digitos.'
             ]
         );
-        return Auth::attempt($credentials)
+        return Auth::attempt($credentials, $request->remember)
             ? redirect()->route('home')
             : back()->withErrors(['email' => 'Credenciais incorretas.'])->withInput();
     }
