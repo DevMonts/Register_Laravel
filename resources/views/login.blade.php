@@ -44,7 +44,10 @@
                             class="block w-full rounded-md bg-gray-800 px-3 py-1.5 text-white outline-none placeholder-gray-400 focus:ring-2 focus:ring-indigo-500 sm:text-sm/6">
                     </div>
                 </div>
-                <input type="checkbox" name="remember"> Lembrar-me
+                <div class="flex justify-center items-center mt-4">
+                    <input type="checkbox" name="remember" id="remember" class="h-4 w-4 text-indigo-600">
+                    <label for="remember" class="ml-2 text-sm text-gray-300">Lembrar-me</label>
+                </div>
                 @if ($errors->has('password'))
                     <div class="text-red-500">
                         {{ $errors->first('password') }}
