@@ -14,6 +14,19 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->text('description');
+            $table->double('price', 10, 2);
+            $table->string('photo');
+
+
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('id_cat');
+            $table->foreign('id_cat')->references('id')->on(' cats')->onDelete('cascade')->onUpdate('cascade');
+
+
+            $table->string('slug');
             $table->timestamps();
         });
     }
