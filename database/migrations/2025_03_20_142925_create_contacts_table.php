@@ -13,7 +13,14 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('cpf');
+            $table->string('tel');
+            $table->string('wpp');
+            $table->string('cep');
             $table->timestamps();
+
+            $table->unsignedBigInteger('id_user');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
