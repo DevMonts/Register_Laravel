@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="bg-black">
+<html lang="pt-br" class="bg-white">
 
 <head>
     <meta charset="UTF-8">
@@ -14,7 +14,7 @@
 <body>
     <nav class="black">
         <div class="nav-wrapper container">
-            <a href="#" class="brand-logo">Store</a>
+            <a href="#" class="brand-logo">Olá, {{ Auth::user()->name ?? 'Visitante' }}! 👋</a>
             <ul id="nav-mobile" class="right">
                 <li><a href="">🏠</a></li>
                 <li><a href="">🛒</a></li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProdutoController
 {
@@ -12,8 +13,8 @@ class ProdutoController
      */
     public function index()
     {
-        $product = \App\Models\Product::all();
-        return dd($product);
+        $user = Auth::user();
+        return view('home', compact('user'));
     }
 
     /**
