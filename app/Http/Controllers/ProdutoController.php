@@ -14,8 +14,8 @@ class ProdutoController
     public function index()
     {
         $user = Auth::user();
-        $product = Product::all();
-        return view('home', compact('user'));
+        $products = Product::all();
+        return view('home', compact('user', 'products'));
     }
 
     /**
